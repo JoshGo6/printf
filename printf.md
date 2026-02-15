@@ -88,10 +88,10 @@ $ printf "%s" "$variable"
 Loading...
 [No newline added in output]
 
-# Read the output of ls into a few variables and print the information
-$ read perms_file inode_nums which_group rest < <(ls -l printf.md)
-$ printf "The file has permissions %s, contains %d inodes, and is contained in the %s group.\n" "$perms_file" "$inode_nums" "$which_group"
-The file has permissions -rw-rw-r--, contains 2 inodes, and is contained in the josh group.
+# Extract information from the output of a command and print the info
+$ read perms_file link_nums file_owner rest_of_output < <(ls -l "printf.md")
+$ printf "The file has permissions %s, contains %d hard links, and is owned by %s.\n" "$perms_file" "$link_nums" "$file_owner"
+The file has permissions -rw-rw-r--, contains 2 hard links, and is owned by josh.
 
 # Print in fixed-width (tabular) format
 # name is a left-aligned string of width 20
