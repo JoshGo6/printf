@@ -66,6 +66,8 @@ The following table contains a sample of format strings you can use with `printf
 
 ## Reference examples
 
+The following code samples show various ways to use `printf` that you can customize for your own needs:
+
 ```shellsession
 # Print a string
 $ declare name="Mary"
@@ -77,13 +79,12 @@ $ declare -i count=5
 $ printf "Pick up %d dozen eggs.\n" "$count"
 Pick up 5 dozen eggs.
 
-# Print multiple variables using placeholders
-$ declare first="Mary"
-$ declare last="Smith"
+# Print multiple variables
+$ declare first="Mary" && declare last="Smith"
 $ printf "Greetings, %s %s.\n" "$first" "$last"
 Greetings, Mary Smith.
 
-# Print without automatically adding a newline
+# Print without adding a newline
 $ declare variable="Loading..."
 $ printf "%s" "$variable"
 Loading...
@@ -92,15 +93,16 @@ Loading...
 # Print in fixed-width (tabular) format
 # name is a left-aligned string of width 20
 # size is a right-aligned integer of width 10
-$ declare name="Document.md"
-$ declare -i size=2048
+$ declare name="Document.md" && declare -i size=2048
 $ printf "%-20s %10d bytes\n" "$name" "$size"
 Document.md                2048 bytes
 
-# Print a zero-padded integer
-$ declare -i number=7
-$ printf "%05d\n" "$number"
-00007
+# Print zero-padded integers
+$ num1=7 && num2=23 && num3=347 
+$ printf "%03i\n%03i\n%03i\n" "$num1" "$num2" "$num3"
+007
+023
+347
 
 # Show the characters in IFS, but don't render them.
 $ printf "%q\n" "$IFS"
