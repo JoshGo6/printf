@@ -59,6 +59,7 @@ The following table contains a sample of format strings you can use with `printf
 | `%-3d`    | Left-align number in 3-character width                         |
 | `%5d`     | Right-align number in 5-character width                        |
 | `%05d`    | Left-justified number 5-characters wide left-padded with zeros |
+| `%q`      | Non-rendered representation of escape sequences.               |
 
 > [!NOTE]
 > This table is not an exhaustive list, and some of the examples here are meant to illustrate possibilities, so that you can create format strings that work for you. For example, by varying `%-3d` to `%-6d`, you would change the width from three characters to six characters. 
@@ -100,6 +101,11 @@ Document.md                2048 bytes
 declare -i number=7
 printf "%05d\n" "$number"
 00007
+
+# Show the characters in IFS, but don't render them.
+$ printf "%q\n" "$IFS"
+$' \t\n'
+# The dollar sign is part of the output, and indicates Ansi-C quoting syntax.
 ```
 
 
