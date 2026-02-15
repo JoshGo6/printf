@@ -107,7 +107,7 @@ $ printf "%03i\n%03i\n%03i\n" "$num1" "$num2" "$num3"
 023
 347
 
-# Show the characters in IFS, but don't render them.
+# Show the characters in IFS, but don't render non-printing characters.
 $ printf "%q\n" "$IFS"
 $' \t\n'
 # The dollar sign is part of the output, and indicates Ansi-C quoting syntax.
