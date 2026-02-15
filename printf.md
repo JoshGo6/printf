@@ -98,8 +98,8 @@ $ printf "%-20s %10d bytes\n" "$name" "$size"
 Document.md                2048 bytes
 
 # Print a zero-padded integer
-declare -i number=7
-printf "%05d\n" "$number"
+$ declare -i number=7
+$ printf "%05d\n" "$number"
 00007
 
 # Show the characters in IFS, but don't render them.
