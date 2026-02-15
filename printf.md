@@ -90,6 +90,11 @@ $ printf "%s" "$variable"
 Loading...
 [No newline added in output]
 
+# Read the output of ls into a few variables and print the information
+$ read perms_file inode_nums which_group rest < <(ls -l printf.md)
+$ printf "The file has permissions %s, contains %d inodes, and is contained in the %s group.\n" "$perms_file" "$inode_nums" "$which_group"
+The file has permissions -rw-rw-r--, contains 2 inodes, and is contained in the josh group.
+
 # Print in fixed-width (tabular) format
 # name is a left-aligned string of width 20
 # size is a right-aligned integer of width 10
