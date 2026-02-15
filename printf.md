@@ -1,9 +1,9 @@
 # `printf`
 
-This article contains the following topics
+This article contains the following topics:
 
 - [Introduction](#Introduction)
-- [Examples](#Examples)
+- [Worked examples](#Worked%20examples)
 - [Format strings](#Format%20strings)
 - [Reference examples](#Reference%20examples)
 
