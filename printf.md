@@ -17,11 +17,12 @@ printf <format-string> <value>...
 
 The format string is a template that contains regular text, format specifiers for variables, and escape sequences. It does not contain the variable values themselves. These are placed after the format string in the order that they're referenced. 
 
-## Examples
+## Worked examples
 
-As an example, if you have three `%s` placeholders, you need three values. The first value listed corresponds to the first format specifier, the second format specifier corresponds to the second format specifier, and so forth, as shown in the following example:
+Let's take a look at an example with three `%d` placeholders and three values. When you have multiple format specifiers and multiple values, the first value listed corresponds to the first format specifier, the second format specifier corresponds to the second format specifier, and so forth, as shown here:
 
 ```shellsession
+$ first_var=1 && second_var=2 && third_var=3
 $ printf "The first var is %d, the second var is %d, and the third var is %d.\n" "$first_var" "$second_var" "$third_var"
 The first var is 1, the second var is 2, and the third var is 3.
 ```
@@ -38,10 +39,10 @@ blueberries  7
 If the items in the second field vary in width, as well, you can use the same process to create left-justified output for that field, too:
 
 ```shellsession
-$ var1=coconuts && var2=blueberries && num1=6 && num2=367
-$ printf "%-13s%d\n%-13s%d\n" "$var1" "$num1" "$var2" "$num2"
-coconuts     6
-blueberries  367
+$ var1=coconuts: && var2=blueberries: && num1=6 && num2=367
+$ printf "%-13s%-5d%s\n%-13s%-5d%s\n" "$var1" "$num1" "items" "$var2" "$num2" "containers"
+coconuts:    6    items
+blueberries: 367  containers
 ```
 
 ## Format strings
