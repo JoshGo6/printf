@@ -1,3 +1,7 @@
+---
+tags:
+  - formatting
+---
 # `printf`
 
 This article contains the following topics:
